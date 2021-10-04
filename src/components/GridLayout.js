@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import { MainGridItem } from './MainGridItem';
-import { GridItem } from './GridItem';
+import { CustomCard } from './CustomCard';
 
 const useStyles = makeStyles((theme)=>({
   mainGridItem: {
@@ -27,10 +27,25 @@ export const GridLayout = () => {
         <MainGridItem />
       </Grid>
       <Grid item sm={6} xs={12}>
-        <GridItem />
+        <CustomCard 
+          title="Excel Masterclass"
+          subtitle="Recommended for you"
+          description="In this 6-leve eDegree, you'll learn how to use Excel from the very basics all the way to VBA programming and machine learning. You'll also learn web automation, Python and Selenium."
+          image={{
+            url: "https://cdn.pixabay.com/photo/2015/09/05/22/46/business-925900_1280.jpg",
+            altText: "Excel Masterclass"
+          }}/>
+
       </Grid>
-      <Grid item sm={4} xs={12}>
-        <Typography className={classes.secondRowSecondItem}>Second row, second item</Typography>
+      <Grid item sm={6} xs={12}>
+        <CustomCard 
+            title="Excel Masterclass"
+            subtitle="Recommended for you"
+            description="In this 6-leve eDegree, you'll learn how to use Excel from the very basics all the way to VBA programming and machine learning. You'll also learn web automation, Python and Selenium."
+            image={{
+              url: "https://cdn.pixabay.com/photo/2015/09/05/22/46/business-925900_1280.jpg",
+              altText: "Excel Masterclass"
+            }}/>
       </Grid>
       <Grid item xs={4} sm={4} >
         <Typography className={classes.secondRowThirdItem}>Second row, third item</Typography>

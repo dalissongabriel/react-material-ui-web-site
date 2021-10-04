@@ -1,28 +1,34 @@
-import { Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, makeStyles, Typography } from '@material-ui/core'
-import { ArrowForward } from '@material-ui/icons';
 import React from 'react'
 
-const useStyles = makeStyles((theme)=>({
+import { Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, makeStyles, Typography } from '@material-ui/core'
+import { ArrowForward } from '@material-ui/icons';
+
+const useStyles = makeStyles(()=>({
   cardImage: {
     height: 300,
   }
 }))
 
-export const GridItem = () => {
+export const CustomCard = ({
+  title,
+  subtitle,
+  description,
+  image,
+}) => {
   const classes = useStyles();
 
   return (
     <Card>
       <CardHeader
-        title="Excel Masterclass"
-        subheader="Recommended for you"/>
+        title={title}
+        subheader={subtitle}/>
       <CardMedia 
         className={classes.cardImage}
-        image="https://cdn.pixabay.com/photo/2015/09/05/22/46/business-925900_1280.jpg"
-        title="Excel Masterclass"/>
+        image={image.url}
+        title={image.altText}/>
       <CardContent>
         <Typography>
-          In this 6-leve eDegree, you'll learn how to use Excel from the very basics all the way to VBA programming and machine learning. You'll also learn web automation, Python and Selenium. 
+          {description}
         </Typography>
       </CardContent>
       <CardActions>
