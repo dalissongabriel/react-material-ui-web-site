@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { MainGridItem } from './MainGridItem';
 
 const useStyles = makeStyles((theme)=>({
   mainGridItem: {
@@ -22,7 +23,7 @@ export const GridLayout = () => {
   return (
     <Grid container spacing={3}>
       <Grid item lg={12} sm={12} xs={12}>
-        <Typography className={classes.mainGridItem}>Main grid item</Typography>
+        <MainGridItem />
       </Grid>
       <Grid item sm={4} xs={12}>
         <Typography className={classes.secondRowFirstItem}>Second row, first item</Typography>
@@ -30,7 +31,7 @@ export const GridLayout = () => {
       <Grid item sm={4} xs={12}>
         <Typography className={classes.secondRowSecondItem}>Second row, second item</Typography>
       </Grid>
-      <Grid item sm={4} xs={12}>
+      <Grid item xs={4} sm={4} >
         <Typography className={classes.secondRowThirdItem}>Second row, third item</Typography>
       </Grid>
     </Grid>
