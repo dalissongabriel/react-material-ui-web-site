@@ -1,29 +1,12 @@
 import React from 'react'
 
-import { Grid, makeStyles, Typography } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { MainGridItem } from './MainGridItem';
 import { CustomCard } from './CustomCard';
 
 import products from '../mocks/products';
 
-
-const useStyles = makeStyles(()=>({
-  mainGridItem: {
-    backgroundColor: 'blue',
-  },
-  secondRowFirstItem: {
-    backgroundColor: 'red',
-  },
-  secondRowSecondItem: {
-    backgroundColor: 'green',
-  },
-  secondRowThirdItem: {
-    backgroundColor: 'yellow',
-  },
-}));
-
 export const GridLayout = () => {
-  const classes = useStyles();
 
   return (
     <Grid container spacing={3}>
@@ -31,7 +14,7 @@ export const GridLayout = () => {
         <MainGridItem />
       </Grid>
       {products.map(product => (
-        <Grid item sm={6} xs={12}>
+        <Grid item sm={6} xs={12} key={product.title}>
           <CustomCard 
             title={product.title}
             subtitle={product.subtitle}
@@ -42,9 +25,6 @@ export const GridLayout = () => {
             }}/>
         </Grid>
       ))}
-      <Grid item xs={4} sm={4} >
-        <Typography className={classes.secondRowThirdItem}>Second row, third item</Typography>
-      </Grid>
     </Grid>
   )
 }

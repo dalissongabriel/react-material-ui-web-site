@@ -42,8 +42,9 @@ export const NavBar = () => {
           variant='h4'
           className={classes.siteTitle}>Mammoth Interactive</Typography>
         <Box className={classes.menuBox}>
-          {['home', 'courses', 'sign-up'].map( menuOptions => (
+          {['home', 'courses', 'sign-up'].map( (menuOptions, index) => (
               <Link
+                key={index}
                 component="button"
                 variant="body1"
                 className={classes.menuOption}>
