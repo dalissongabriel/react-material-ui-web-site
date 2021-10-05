@@ -13,8 +13,20 @@ export const GridLayout = () => {
       <Grid item lg={12} sm={12} xs={12}>
         <MainGridItem />
       </Grid>
-      {products.map(product => (
-        <Grid item sm={6} xs={12} key={product.title}>
+      {products.slice(0,2).map(product => (
+        <Grid item md={6} sm={12} xs={12} key={product.title}>
+          <CustomCard 
+            title={product.title}
+            subtitle={product.subtitle}
+            description={product.description}
+            image={{
+              url: product.image.url,
+              altText: product.image.altText
+            }}/>
+        </Grid>
+      ))}
+      {products.slice(2).map(product => (
+        <Grid item md={4} sm={6} xs={12} key={product.title}>
           <CustomCard 
             title={product.title}
             subtitle={product.subtitle}
